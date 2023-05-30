@@ -19,7 +19,7 @@ namespace LojaCar
             this.WindowState = FormWindowState.Maximized;
         }
 
-        //menuMarca
+        //menuMarcas
         private void itemMarcaCadastrar_Click(object sender, EventArgs e)
         {
             if(Application.OpenForms.OfType<FrmMarcasSalvar>().Count() > 0) 
@@ -49,6 +49,25 @@ namespace LojaCar
                 FrmMarcasConsulta frm = new FrmMarcasConsulta();
                 frm.Show();
             }
+        }
+
+        //menuCarros
+        private void itemCarroCadastrar_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<FrmCarrosSalvar>().Count() > 0)
+            {
+                Application.OpenForms.OfType<FrmCarrosSalvar>().First().Focus();
+            }
+            else
+            {
+                FrmCarrosSalvar frm = new FrmCarrosSalvar();
+                frm.Show();
+            }
+        }
+
+        private void itemCarroListar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(Carros.listar());
         }
     }
 }

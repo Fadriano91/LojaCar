@@ -27,7 +27,7 @@ namespace LojaCar.Class
             try
             {
                 MySqlConnection conn = Conexao.obterConexao();
-                string sql = "INSERT INTO carros VALUES (null, @modelo, @ano, @cor, @id_marca";
+                string sql = "INSERT INTO carros VALUES (null, @modelo, @ano, @cor, @id_marca)";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@modelo", c.modelo);
                 cmd.Parameters.AddWithValue("@ano", c.ano);

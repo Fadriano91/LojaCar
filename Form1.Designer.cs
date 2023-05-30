@@ -98,15 +98,17 @@
             // 
             this.itemCarroCadastrar.BackColor = System.Drawing.Color.PaleTurquoise;
             this.itemCarroCadastrar.Name = "itemCarroCadastrar";
-            this.itemCarroCadastrar.Size = new System.Drawing.Size(152, 26);
+            this.itemCarroCadastrar.Size = new System.Drawing.Size(180, 26);
             this.itemCarroCadastrar.Text = "Cadastrar";
+            this.itemCarroCadastrar.Click += new System.EventHandler(this.itemCarroCadastrar_Click);
             // 
             // itemCarroListar
             // 
             this.itemCarroListar.BackColor = System.Drawing.Color.PaleTurquoise;
             this.itemCarroListar.Name = "itemCarroListar";
-            this.itemCarroListar.Size = new System.Drawing.Size(152, 26);
+            this.itemCarroListar.Size = new System.Drawing.Size(180, 26);
             this.itemCarroListar.Text = "Listar";
+            this.itemCarroListar.Click += new System.EventHandler(this.itemCarroListar_Click);
             // 
             // FrmPrincipal
             // 
