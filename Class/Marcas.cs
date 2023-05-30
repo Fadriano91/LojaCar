@@ -25,7 +25,7 @@ namespace LojaCar.Class
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@marca", m.Marca);
                 cmd.ExecuteNonQuery();
-                return "Categoria salva com sucesso";
+                return "Marca salva com sucesso";
             }
             catch (Exception ex)
             {
@@ -71,5 +71,51 @@ namespace LojaCar.Class
             }
             return verificar;
         }
+
+        public string excluir(string id)
+        {
+            try
+            {
+                MySqlConnection conn = Conexao.obterConexao();
+                string sql = "DELETE FROM categoria WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+                cmd.ExecuteNonQuery();
+                return "Marca excluída";
+            }
+            catch (Exception ex)
+            {
+                return "erro: " + ex.Message;
+            }
+        }
+
+        public static string editar(Marcas m)
+        {
+            try
+            {
+                MySqlConnection conn = Conexao.obterConexao();
+                string sql = "UPDATE categoria SET nome = @nome WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@id", m.Id);
+                cmd.Parameters.AddWithValue("@marca", m.Marca);
+                cmd.ExecuteNonQuery();
+                return "Marca editada com sucesso";
+            }
+            catch (Exception ex)
+            {
+                return "erro: " + ex.Message;
+            }
+        }
+
+        public static MySqlDataReader carregar()
+        {
+            MySqlConnection conn = Conexao.obterConexao();
+            string sql = "SELECT * FROM marcas";
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataReader res = cmd.ExecuteReader();
+
+            return res;
+        }
+
     }
 }

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace LojaCar.Class
 {
-    internal class Carro
+    internal class Carros
     {
+
     }
 }
