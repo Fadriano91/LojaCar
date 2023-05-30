@@ -77,7 +77,7 @@ namespace LojaCar.Class
             try
             {
                 MySqlConnection conn = Conexao.obterConexao();
-                string sql = "DELETE FROM categoria WHERE id = @id";
+                string sql = "DELETE FROM marcas WHERE id = @id";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@id", id);
                 cmd.ExecuteNonQuery();
@@ -94,7 +94,7 @@ namespace LojaCar.Class
             try
             {
                 MySqlConnection conn = Conexao.obterConexao();
-                string sql = "UPDATE categoria SET nome = @nome WHERE id = @id";
+                string sql = "UPDATE marcas SET marca = @marca WHERE id = @id";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@id", m.Id);
                 cmd.Parameters.AddWithValue("@marca", m.Marca);
